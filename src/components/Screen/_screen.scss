@@ -1,0 +1,51 @@
+.screen-container {
+  background-image: url("/public/assets/bg_main.png");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "Lilita One", serif;
+  .screen-title {
+    font-size: 110px;
+    color: white;
+    text-align: left;
+    margin: 0 50px;
+    padding: 0 0 20px 0;
+    border-bottom: 3px solid yellow;
+  }
+
+  .screen-center {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .screen-slogan {
+      font-size: 80px;
+      color: white;
+    }
+    .screen-modes {
+      font-size: 48px;
+      color: white;
+
+      .screen-mode-selector {
+        border: 3px solid white;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 50px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        &:hover {
+          background: rgba(0, 0, 0, 0.8);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .screen-footer {
+    text-align: right;
+    margin: 0 50px;
+    font-size: 24px;
+    color: white;
+  }
+}
