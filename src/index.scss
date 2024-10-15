@@ -1,8 +1,8 @@
-@import
-"./components/Screen/screen";
-
+@import "./components/Screen/screen", "./components/ScreenTop/screenTop",
+  "./components/ButtonSelector/buttonSelector",
+  "./components/SoloBattleModeSelector/soloBattleModeSelector",
+  "./components/TrainingBattle/trainingBattle", "./components/ThemeSelector/themeSelector";
 
 body {
   margin: 0;
-
 }

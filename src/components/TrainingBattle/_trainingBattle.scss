@@ -1,0 +1,17 @@
+.screen-theme-container {
+  display : grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 30px auto;
+  gap: 20px;
+}
+.scene-rules {
+  font-size: 60px;
+  color: white;
+  font-family: "Lilita One", serif;
+  text-align: center;
+
+}
+
+button {
+  width: 50px;
+}

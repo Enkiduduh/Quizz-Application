@@ -1,0 +1,16 @@
+.screen-mode-selector {
+  border: 3px solid white;
+  font-size: 48px;
+  color: white;
+  width: 421px;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: "Lilita One", serif;
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+  }
+}

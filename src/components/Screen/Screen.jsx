@@ -1,8 +1,17 @@
+import ScreenTop from "../ScreenTop/ScreenTop";
+import ButtonSelector from "../ButtonSelector/ButtonSelector";
+import { useNavigate } from "react-router-dom";
 
 function Screen() {
+  const navigate = useNavigate();
+
+  const handleClickToSolo = () => {
+    navigate("/solo");
+  };
+
   return (
     <div className="screen-container">
-      <div className="screen-title">Quizz'App</div>
+      <ScreenTop title="Quizz'App" />
       <div className="screen-center">
         <div className="screen-slogan">
           Don&apos;t waste your time, <br />
@@ -10,15 +19,14 @@ function Screen() {
           your friends to the top !
         </div>
         <div className="screen-modes">
-          <div className="screen-mode-selector">Solo Battle Mode</div>
-          <div className="screen-mode-selector">Multi Battle Mode</div>
-          <div className="screen-mode-selector">Leaderboards</div>
-          <div className="screen-mode-selector">Options</div>
+          <ButtonSelector mode="Solo Battle Mode" onClick={handleClickToSolo}/>
+          <ButtonSelector mode="Multi Battle Mode" />
+          <ButtonSelector mode="Leaderboards" />
+          <ButtonSelector mode="Options" />
         </div>
       </div>
-      <div className="screen-footer">Ver. 1.0.1</div>
     </div>
-  )
+  );
 }
 
-export default Screen
+export default Screen;
