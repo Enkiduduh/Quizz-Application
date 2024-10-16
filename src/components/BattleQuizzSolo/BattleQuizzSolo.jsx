@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Replay from "/assets/replay.png";
-import myAudioFile from "../../assets/soundtracks/cartoons/cartoon_easy_voice_1.m4a";
+import QuizzEntry from "../QuizzEntry/QuizzEntry";
 import ScreenTop from "../ScreenTop/ScreenTop";
 
 function BattleQuizzSolo() {
   const [questions, setQuestions] = useState([]);
+  const [questionsEasy, setQuestionsEasy] = useState([]);
+  const [questionsStandard, setQuestionsStandard] = useState([]);
+  const [questionsAdvanced, setQuestionsAdvanced] = useState([]);
+  const [randomNumber, setRandomNumber] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,6 +29,27 @@ function BattleQuizzSolo() {
   }, []);
 
   useEffect(() => {
+    if (questions.length > 0) {
+      setQuestionsEasy(
+        questions.filter((question) => question.difficulte === "Facile")
+      );
+      setQuestionsStandard(
+        questions.filter((question) => question.difficulte === "Intermédiaire")
+      );
+      setQuestionsAdvanced(
+        questions.filter((question) => question.difficulte === "Avancé")
+      );
+      console.log(questionsEasy);
+      console.log(questionsStandard);
+      console.log(questionsAdvanced);
+    }
+  }, [questions]);
+
+  useEffect(() => {
+    setRandomNumber(Math.floor(Math.random() * questionsEasy.length));
+  }, [questionsEasy]);
+
+  useEffect(() => {
     setTimeout(() => {
       const audio = document.getElementById("audio");
       audio.volume = 1;
@@ -40,30 +64,15 @@ function BattleQuizzSolo() {
   return (
     <div className="screen-container-battle">
       <ScreenTop title="Training Battle" />
-      {questions && questions.length > 0 && (
-        <>
-          <audio id="audio" src={myAudioFile}></audio>
-          <div className="screen-infos">
-            <div className="screen-level">
-              Niveau: {questions[0].difficulte}
-            </div>
-            <img
-              className="screen-audio"
-              src={Replay}
-              alt=""
-              onClick={() => document.getElementById("audio").play()}
-            ></img>
-            <div className="screen-progression">1/21</div>
-          </div>
-          <div className="screen-question">{questions[0].question}</div>
-          <div className="screen-answers-container">
-            {questions[0].reponses.map((reponse, index) => (
-              <div key={index} className="screen-answers">
-                {Object.values(reponse)[0]}
-              </div>
-            ))}
-          </div>
-        </>
+      {questionsEasy && questionsEasy.length > 0 && (
+        <QuizzEntry
+          audio_id={questionsEasy[randomNumber].id}
+          difficulte={questionsEasy[randomNumber].difficulte}
+          id={questionsEasy[randomNumber].id}
+          length={questionsEasy.length}
+          question={questionsEasy[randomNumber].question}
+          reponses={questionsEasy[randomNumber].reponses}
+        />
       )}
       <button onClick={handleClickToReturnMainMenu}> Retour </button>
     </div>
