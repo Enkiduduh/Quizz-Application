@@ -13,7 +13,7 @@ function TrainingBattle() {
       <ScreenTop title="Training Battle" />
       <div className="scene-rules">Choisissez un thème.</div>
       <div className="screen-theme-container">
-        <ThemeSelector theme="Dessins animés" />
+        <ThemeSelector theme="Dessins animés" theme_bg="bg_selector_cartoon"/>
         <ThemeSelector theme="Films" />
         <ThemeSelector theme="Séries" />
         <ThemeSelector theme="Jeux vidéo" />

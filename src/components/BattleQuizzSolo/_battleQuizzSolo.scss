@@ -1,0 +1,66 @@
+.screen-container-battle {
+  background-image: url("/public/assets/bg_selector_battle_solo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-shadow: #000000 3px 5px 2px;
+}
+.screen-question {
+  font-size: 42px;
+  color: white;
+  margin: 50px auto;
+}
+.screen-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 50px 0 50px;
+  .screen-audio {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+    &:hover {
+      background: rgba(61, 182, 5, 0.816);
+      transform: scale(1.1);
+    }
+  }
+  .screen-level {
+    font-size: 36px;
+    color: white;
+    width: 33%;
+  }
+  .screen-progression {
+    font-size: 36px;
+    width: 33%;
+    text-align: right;
+  }
+}
+
+.screen-answers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 30px auto;
+  gap: 80px;
+
+  .screen-answers {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    border: 3px solid white;
+    padding: 20px;
+    border-radius: 50px;
+    width: 350px;
+    background: rgba(0, 0, 0, 0.5);
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+}

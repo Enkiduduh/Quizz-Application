@@ -1,11 +1,12 @@
 .screen-container {
   background-image: url("/public/assets/bg_main.png");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  font-family: "Lilita One", serif;
+  text-shadow: #000000 3px 5px 2px;
 }
 .screen-container .screen-center {
   display: flex;
@@ -32,7 +33,7 @@
   color: white;
   text-align: left;
   margin: 20px 50px 0px 50px;
-  padding: 0 0 30px 0;
+  padding: 0 0 40px 0;
   border-bottom: 3px solid yellow;
   height: 100px;
   position: relative;
@@ -42,7 +43,7 @@
   font-size: 24px;
   color: white;
   position: relative;
-  top: -90px;
+  top: -50px;
   text-align: right;
   margin: 0 50px 0 0;
 }
@@ -57,7 +58,7 @@
   border-radius: 50px;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  font-family: "Lilita One", serif;
+  box-shadow: 8px 8px 10px 0px rgb(0, 0, 0);
 }
 .screen-mode-selector:hover {
   background: rgba(0, 0, 0, 0.8);
@@ -71,7 +72,6 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: "Lilita One", serif;
 }
 .screen-container .screen-center {
   display: flex;
@@ -106,7 +106,6 @@
 .scene-rules {
   font-size: 60px;
   color: white;
-  font-family: "Lilita One", serif;
   text-align: center;
 }
 
@@ -124,13 +123,92 @@ button {
   border-radius: 50px;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  font-family: "Lilita One", serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  text-shadow: #000000 3px 5px 2px;
+  box-shadow: 8px 8px 10px 0px rgb(0, 0, 0);
 }
 .screen-theme-selector:hover {
-  background: rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
+  background-repeat: no-repeat;
+  background-size: cover;
   cursor: pointer;
+}
+
+.screen-container-battle {
+  background-image: url("/public/assets/bg_selector_battle_solo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-shadow: #000000 3px 5px 2px;
+}
+
+.screen-question {
+  font-size: 42px;
+  color: white;
+  margin: 50px auto;
+}
+
+.screen-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 50px 0 50px;
+}
+.screen-infos .screen-audio {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.screen-infos .screen-audio:hover {
+  background: rgba(61, 182, 5, 0.816);
+  transform: scale(1.1);
+}
+.screen-infos .screen-level {
+  font-size: 36px;
+  color: white;
+  width: 33%;
+}
+.screen-infos .screen-progression {
+  font-size: 36px;
+  width: 33%;
+  text-align: right;
+}
+
+.screen-answers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 30px auto;
+  gap: 80px;
+}
+.screen-answers-container .screen-answers {
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  border: 3px solid white;
+  padding: 20px;
+  border-radius: 50px;
+  width: 350px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.screen-answers-container .screen-answers:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+html {
+  overflow: hidden;
 }
 
 body {
   margin: 0;
+  font-family: "Lilita One", serif;
 }/*# sourceMappingURL=index.css.map */

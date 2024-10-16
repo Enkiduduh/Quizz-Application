@@ -1,8 +1,14 @@
 @import "./components/Screen/screen", "./components/ScreenTop/screenTop",
   "./components/ButtonSelector/buttonSelector",
   "./components/SoloBattleModeSelector/soloBattleModeSelector",
-  "./components/TrainingBattle/trainingBattle", "./components/ThemeSelector/themeSelector";
+  "./components/TrainingBattle/trainingBattle",
+  "./components/ThemeSelector/themeSelector",
+  "./components/BattleQuizzSolo/battleQuizzSolo";
 
+html {
+  overflow: hidden;
+}
 body {
   margin: 0;
+  font-family: "Lilita One", serif;
 }

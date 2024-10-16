@@ -8,9 +8,16 @@
   border-radius: 50px;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  font-family: "Lilita One", serif;
+  // background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  text-shadow: #000000 3px 5px 2px;
+  box-shadow: 8px 8px 10px 0px rgb(0, 0, 0);
   &:hover {
-    background: rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+    background-repeat: no-repeat;
+    background-size: cover;
     cursor: pointer;
   }
 }

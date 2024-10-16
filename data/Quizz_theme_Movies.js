@@ -1,4 +1,4 @@
-export const filmsQuestions = [
+export const moviesQuestions = [
   {
     id: 1,
     type: "Films",
