@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .screen-container {
   background-image: url("/public/assets/bg_main.png");
   background-position: center;
@@ -183,6 +184,11 @@ button {
   text-align: right;
 }
 
+.screen-form-container {
+  display: flex;
+  position: relative;
+}
+
 .screen-answers-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -192,16 +198,80 @@ button {
 .screen-answers-container .screen-answers {
   font-size: 36px;
   color: white;
+  display: flex;
+  justify-content: center;
   text-align: center;
+  align-items: center;
   border: 3px solid white;
   padding: 20px;
   border-radius: 50px;
   width: 350px;
+  height: 110px;
   background: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
 }
 .screen-answers-container .screen-answers:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+.screen-answers-container .radio-input {
+  display: none; /* Masque le bouton radio */
+}
+.screen-answers-container .custom-radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.screen-answers-container .custom-radio-label:hover .screen-answers {
+  background-color: rgb(255, 221, 49);
+}
+.screen-answers-container .radio-input:checked + .screen-answers {
+  background-color: #234bcf; /* Couleur de fond lorsque sélectionné */
+  border-color: #ffffff; /* Bordure bleu lorsqu'une réponse est sélectionnée */
+  color: rgb(255, 221, 49);
+}
+
+.screen-result {
+  color: rgb(255, 255, 255);
+  border-bottom: 5px solid white;
+  border-top: 5px solid white;
+  padding: 20px;
+  width: 100vw;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+}
+.screen-result .result {
+  margin: 20px;
+}
+.screen-result .bool {
+  font-size: 70px;
+}
+.screen-result .score {
+  font-size: 40px;
+}
+.screen-result .next {
+  border: 3px solid white;
+  width: 250px;
+  font-size: 30px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+.screen-result .next:hover {
+  border: 1px solid black;
+  color: black;
+}
+
+#right {
+  background: rgba(12, 144, 10, 0.9);
+}
+
+#wrong {
+  background: rgba(144, 10, 10, 0.9);
 }
 
 html {

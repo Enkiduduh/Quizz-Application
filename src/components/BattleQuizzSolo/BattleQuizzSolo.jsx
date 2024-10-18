@@ -57,6 +57,11 @@ function BattleQuizzSolo() {
     }, 2000);
   });
 
+
+  const handleClickToRCheckStatus = () => {
+    console.log(questionsEasy.status)
+  };
+
   const handleClickToReturnMainMenu = () => {
     navigate("/solo");
   };
@@ -72,6 +77,7 @@ function BattleQuizzSolo() {
           length={questionsEasy.length}
           question={questionsEasy[randomNumber].question}
           reponses={questionsEasy[randomNumber].reponses}
+          onChange={handleClickToRCheckStatus}
         />
       )}
       <button onClick={handleClickToReturnMainMenu}> Retour </button>
