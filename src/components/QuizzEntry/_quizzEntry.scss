@@ -19,7 +19,7 @@
       transform: scale(1.1);
     }
   }
-  .screen-level {
+  .screen-level, .screen-score {
     font-size: 36px;
     color: white;
     width: 33%;
@@ -110,10 +110,13 @@
     padding: 10px;
     text-align: center;
     border-radius: 20px;
+    transition: transform 0.8s ease;
     &:hover {
       // background: #7e7d7d;
-      border :3px solid black;
-      color: black;
+      border: 3px solid rgb(255, 230, 0);
+      color: rgb(255, 191, 0);
+      background: #6a4901d7;
+      transform: scale(1.3);
     }
   }
 }

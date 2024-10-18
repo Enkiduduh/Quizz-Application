@@ -173,7 +173,7 @@ button {
   background: rgba(61, 182, 5, 0.816);
   transform: scale(1.1);
 }
-.screen-infos .screen-level {
+.screen-infos .screen-level, .screen-infos .screen-score {
   font-size: 36px;
   color: white;
   width: 33%;
@@ -260,10 +260,13 @@ button {
   padding: 10px;
   text-align: center;
   border-radius: 20px;
+  transition: transform 0.8s ease;
 }
 .screen-result .next:hover {
-  border: 1px solid black;
-  color: black;
+  border: 3px solid rgb(255, 230, 0);
+  color: rgb(255, 191, 0);
+  background: rgba(106, 73, 1, 0.8431372549);
+  transform: scale(1.3);
 }
 
 #right {

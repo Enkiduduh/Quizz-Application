@@ -9,9 +9,12 @@ function QuizzEntry({
   length,
   question,
   reponses,
+  onClick,
   onChange,
 }) {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Suivi de l'index de la question actuelle
   const [selectedAnswer, setSelectedAnswer] = useState(null); // État pour stocker la réponse sélectionnée
+  const [counter, setCounter] = useState(0);
 
   // Fonction pour gérer le changement de réponse
   const handleAnswerChange = (reponse) => {
@@ -31,6 +34,45 @@ function QuizzEntry({
 
   reponses = shuffleArray(reponses);
 
+  // Fonction pour réinitialiser les styles et l'état des réponses
+  const reset = () => {
+    const resultRight = document.getElementById("right");
+    const resultWrong = document.getElementById("wrong");
+
+    if (resultRight) {
+      resultRight.style.display = "none";
+      console.log("Before incrementing counter:", counter);
+      // Utilisez la fonction de mise à jour fonctionnelle pour garantir que vous utilisez la dernière valeur de `counter`
+      setCounter((prevCounter) => {
+        console.log("Incrementing counter:", prevCounter + 1);
+        return prevCounter + 1;
+      });
+    }
+
+   if (resultWrong) {
+    resultWrong.style.display = "none";
+    setCounter((prevCounter) => {
+      console.log("Keeping counter unchanged:", prevCounter);
+      return prevCounter;
+    });
+  }
+    // Réinitialiser toutes les div de réponses
+    const allAnswers = document.querySelectorAll(".screen-answers");
+    allAnswers.forEach((answer) => {
+      answer.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; // Enlever la mise en forme de la réponse
+
+    });
+
+    // Réinitialiser la réponse sélectionnée
+    setSelectedAnswer(null);
+  };
+
+  // Gestion du clic sur "Suivant"
+  const handleClick = () => {
+    onClick(); // Appel de la fonction onClick passée par le parent pour charger la question suivante
+    reset(); // Réinitialiser l'affichage
+  };
+
   return (
     <>
       <audio
@@ -39,6 +81,7 @@ function QuizzEntry({
       ></audio>
       <div className="screen-infos">
         <div className="screen-level">Niveau: {difficulte}</div>
+        <div className="screen-score">Score: {counter}</div>
         <img
           className="screen-audio"
           src={Replay}
@@ -65,6 +108,7 @@ function QuizzEntry({
                 value={Object.values(reponse)[0]} // La valeur est la réponse
                 className="radio-input"
                 onChange={() => handleAnswerChange(reponse)} // Appel de la fonction lors du changement
+                checked={selectedAnswer === reponse} // Associer l'état checked avec selectedAnswer
               />
               <div className="screen-answers">{Object.values(reponse)[0]}</div>
             </label>
@@ -77,20 +121,22 @@ function QuizzEntry({
               <div className="screen-result" id="right">
                 <div className="result bool">Bonne réponse !</div>
                 <div className="result score">Score +1</div>
-                <div className="result next">Suivant</div>
-
+                <div className="result next" onClick={handleClick}>
+                  Suivant
+                </div>
               </div>
             ) : (
               <div className="screen-result" id="wrong">
-               <div className="result bool">Mauvaise réponse ...</div>
-               <div className="result score">Score +0</div>
-               <div className="result next">Suivant</div>
-               </div>
+                <div className="result bool">Mauvaise réponse ...</div>
+                <div className="result score">Score +0</div>
+                <div className="result next" onClick={handleClick}>
+                  Suivant
+                </div>
+              </div>
             )}
           </>
         )}
       </form>
-      {/* Afficher si la réponse sélectionnée est correcte ou non */}
     </>
   );
 }

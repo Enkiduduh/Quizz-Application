@@ -9,6 +9,7 @@ function BattleQuizzSolo() {
   const [questionsStandard, setQuestionsStandard] = useState([]);
   const [questionsAdvanced, setQuestionsAdvanced] = useState([]);
   const [randomNumber, setRandomNumber] = useState(0);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -39,9 +40,9 @@ function BattleQuizzSolo() {
       setQuestionsAdvanced(
         questions.filter((question) => question.difficulte === "Avancé")
       );
-      console.log(questionsEasy);
-      console.log(questionsStandard);
-      console.log(questionsAdvanced);
+      // console.log(questionsEasy);
+      // console.log(questionsStandard);
+      // console.log(questionsAdvanced);
     }
   }, [questions]);
 
@@ -49,17 +50,23 @@ function BattleQuizzSolo() {
     setRandomNumber(Math.floor(Math.random() * questionsEasy.length));
   }, [questionsEasy]);
 
+  // Fonction pour passer à la question suivante (logique aléatoire)
+  const handleNextQuestion = () => {
+    setRandomNumber(Math.floor(Math.random() * questionsEasy.length)); // Nouvelle question aléatoire
+  };
+
   useEffect(() => {
     setTimeout(() => {
       const audio = document.getElementById("audio");
-      audio.volume = 1;
-      audio.play();
-    }, 2000);
+      if (audio) {
+        audio.volume = 1;
+        audio.play();
+      }
+    }, 1000);
   });
 
-
   const handleClickToRCheckStatus = () => {
-    console.log(questionsEasy.status)
+    console.log("-");
   };
 
   const handleClickToReturnMainMenu = () => {
@@ -78,6 +85,7 @@ function BattleQuizzSolo() {
           question={questionsEasy[randomNumber].question}
           reponses={questionsEasy[randomNumber].reponses}
           onChange={handleClickToRCheckStatus}
+          onClick={handleNextQuestion}
         />
       )}
       <button onClick={handleClickToReturnMainMenu}> Retour </button>
