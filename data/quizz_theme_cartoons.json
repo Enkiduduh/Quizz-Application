@@ -276,7 +276,7 @@
     "id": 22,
     "type": "Dessins Animés",
     "difficulte": "Intermédiaire",
-    "question": "Dans My Little Pony, qui est le frère de Shining Armor ?",
+    "question": "Dans My Little Pony, qui est la soeur de Shining Armor ?",
     "reponses": [
       { "reponse_1": "Twilight Sparkle", "status": true },
       { "reponse_2": "Rainbow Dash", "status": false },
@@ -687,7 +687,7 @@
     "id": 56,
     "type": "Dessins Animés",
     "difficulte": "Avancé",
-    "question": "Dans Pokémon, quel est le type de Pikachu dans la série originale ?",
+    "question": "Dans Pokémon, quel est le type de Pikachu ?",
     "reponses": [
       { "reponse_1": "Électrique", "status": true },
       { "reponse_2": "Feu", "status": false },

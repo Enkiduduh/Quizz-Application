@@ -12,20 +12,27 @@ function TrainingBattle() {
     <div className="screen-container">
       <ScreenTop title="Training Battle" />
       <div className="scene-rules">Choisissez un thème.</div>
-      <div className="screen-theme-container">
-        <ThemeSelector theme="Dessins animés" theme_bg="bg_selector_cartoon"/>
-        <ThemeSelector theme="Films" />
-        <ThemeSelector theme="Séries" />
-        <ThemeSelector theme="Jeux vidéo" />
-        <ThemeSelector theme="Mathématiques" />
-        <ButtonSelector mode="XXXXXXX"  />
-      </div>
-      <div className="scene-rules">Choisissez une difficulté.</div>
-      <div className="screen-theme-container">
-        <ThemeSelector theme="Facile" />
-        <ThemeSelector theme="Intermédiaire" />
-        <ThemeSelector theme="Avancé" />
-      </div>
+      <form action="">
+        <div className="screen-theme-container">
+          <ThemeSelector
+            theme="Dessins animés"
+            theme_bg="bg_selector_cartoon"
+            theme_id="cartoons"
+          />
+          <ThemeSelector theme="Films" theme_id="movies" />
+          <ThemeSelector theme="Séries" theme_id="series" />
+          <ThemeSelector theme="Jeux vidéo" theme_id="videogames" />
+          <ThemeSelector theme="Mathématiques" theme_id="maths" />
+          <ButtonSelector mode="XXXXXXX" theme_id="xxx" />
+        </div>
+        <div className="scene-rules">Choisissez une difficulté.</div>
+        <div className="screen-theme-container">
+          <ThemeSelector theme="Facile" theme_id="easy" />
+          <ThemeSelector theme="Intermédiaire" theme_id="standard" />
+          <ThemeSelector theme="Avancé" theme_id="advanced" />
+        </div>
+      </form>
+
       <button onClick={handleClickToReturnMainMenu}> Retour </button>
     </div>
   );

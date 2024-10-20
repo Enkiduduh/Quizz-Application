@@ -1,4 +1,4 @@
-.screen-theme-selector {
+.screen-theme {
   border: 3px solid white;
   font-size: 48px;
   color: white;
@@ -8,7 +8,6 @@
   border-radius: 50px;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  // background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #ffffff;
@@ -20,4 +19,13 @@
     background-size: cover;
     cursor: pointer;
   }
+}
+.screen-theme-selector {
+  display: none; /* Masque le bouton radio */
+}
+
+.custom-radio-label-theme_id {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
